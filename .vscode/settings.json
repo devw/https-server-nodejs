@@ -1,4 +1,10 @@
 {
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+  },
   "workbench.colorCustomizations": {
     "activityBar.background": "#441B55",
     "titleBar.activeBackground": "#5F2677",
