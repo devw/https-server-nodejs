@@ -1,0 +1,7 @@
+{
+  "name": "https-server-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Antonio Pierro <antonio.pierro@gmail.com>",
+  "license": "MIT"
+}
