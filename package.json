@@ -1,7 +1,14 @@
 {
-  "name": "https-server-nodejs",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Antonio Pierro <antonio.pierro@gmail.com>",
-  "license": "MIT"
+    "name": "https-server-nodejs",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Antonio Pierro <antonio.pierro@gmail.com>",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "start": "sudo node src/index.js"
+    },
+    "dependencies": {
+        "dotenv": "^10.0.0"
+    }
 }
