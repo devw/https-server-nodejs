@@ -11,5 +11,8 @@ export const authenticateToken = (req, res, next) => {
     jwt.verify(token, ACCESS_TOKEN_SECRET, verifyCallback);
 };
 
-export const authenticateUser = (req, res) =>
-    res.json({ accessToken: jwt.sign(req.body.username, ACCESS_TOKEN_SECRET) });
+export const authenticateUser = (req, res) => {
+    const name = req.body.username;
+    const accessToken = jwt.sign({ name }, ACCESS_TOKEN_SECRET, { expiresIn: 60 });
+    res.json({ accessToken });
+};
