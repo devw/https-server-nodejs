@@ -1,0 +1,19 @@
+@endpoint=https://localhost:8080
+
+### home request
+GET {{endpoint}}
+
+### order request
+GET {{endpoint}}/order/1312311213231,1231232
+
+### orders request
+GET {{endpoint}}/orders/1312311213231,1231232
+Authorization: eyJhbGciOiJIUzI1NiJ9.QW50b25pb3M.wS2HQ6KPMJ9HTFYlYePOUy0t_K7Z4_-7f8yVznuEvHU
+
+### login request
+POST {{endpoint}}/login
+Content-Type: application/json
+
+{
+  "username": "Antonio"
+}

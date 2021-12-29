@@ -1,9 +1,13 @@
 {
+  "editor.formatOnSave": true,
   "prettier": {
     "printWidth": 120,
     "semi": true,
     "singleQuote": true,
     "tabWidth": 4,
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
   },
   "workbench.colorCustomizations": {
     "activityBar.background": "#441B55",

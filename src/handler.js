@@ -1,5 +1,14 @@
-export const handler = (req, res) => {
-    console.log('req, res:', req, res);
+const homeHandler = (req, res) => {
+    console.log(req.query.name);
     res.writeHead(200);
-    res.end('No result!');
+    res.end('Home!');
+};
+
+const ordersHandler = (_, res) => {
+    res.end('Your data!');
+};
+
+export default {
+    homeHandler,
+    ordersHandler,
 };
