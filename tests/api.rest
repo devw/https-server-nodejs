@@ -1,0 +1,10 @@
+### home request
+GET https://localhost:8080/
+
+### login request
+POST https://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "Antonio"
+}

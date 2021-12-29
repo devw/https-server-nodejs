@@ -3,6 +3,7 @@ import express from 'express';
 import fs from 'fs';
 import dotenv from 'dotenv';
 import handler from './handler.js';
+import { authenticateUser } from './auth.js';
 
 dotenv.config();
 
@@ -15,7 +16,9 @@ const getOptions = () => ({
 });
 const server = https.createServer(getOptions(), app);
 
+app.use(express.json());
 app.get('/', handler.rootHandler);
+app.post('/login', authenticateUser);
 app.get('/orders/:id', handler.ordersHandler);
 
 server.listen(PORT, () => console.log(`server listing on ${PORT}`));
