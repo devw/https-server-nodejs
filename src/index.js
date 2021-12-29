@@ -1,10 +1,9 @@
 import https from 'https';
 import express from 'express';
 import fs from 'fs';
-import dotenv from 'dotenv';
 import handler from './handler.js';
-import { authenticateUser } from './auth.js';
-
+import { authenticateUser, authenticateToken } from './auth.js';
+import dotenv from 'dotenv';
 dotenv.config();
 
 const { PORT, KEY, CERT, CA } = process.env;
@@ -17,8 +16,9 @@ const getOptions = () => ({
 const server = https.createServer(getOptions(), app);
 
 app.use(express.json());
-app.get('/', handler.rootHandler);
+app.get('/', handler.homeHandler);
 app.post('/login', authenticateUser);
-app.get('/orders/:id', handler.ordersHandler);
+app.get('/order/:id', handler.ordersHandler);
+app.get('/orders/:id', authenticateToken, handler.ordersHandler);
 
 server.listen(PORT, () => console.log(`server listing on ${PORT}`));

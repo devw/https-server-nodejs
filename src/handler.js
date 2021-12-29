@@ -1,27 +1,14 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
-const getSecret = () => process.env.SECRET;
-
-const rootHandler = (req, res) => {
+const homeHandler = (req, res) => {
     console.log(req.query.name);
     res.writeHead(200);
-    res.end('No result!');
+    res.end('Home!');
 };
 
-const ordersHandler = (req, res) => {
-    if (req.query.token !== getSecret()) {
-        res.writeHead(200);
-        res.end('Your token is expired!');
-    } else {
-        console.log('req.query.token: ', req.query.token);
-        console.log('req.params.id: ', req.params.id);
-        res.writeHead(200);
-        res.end('Your data!');
-    }
+const ordersHandler = (_, res) => {
+    res.end('Your data!');
 };
 
 export default {
-    rootHandler,
+    homeHandler,
     ordersHandler,
 };
