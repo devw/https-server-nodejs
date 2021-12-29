@@ -2,7 +2,7 @@ import https from 'https';
 import express from 'express';
 import fs from 'fs';
 import dotenv from 'dotenv';
-import routes from './routes.js';
+import handler from './handler.js';
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ const getOptions = () => ({
 });
 const server = https.createServer(getOptions(), app);
 
-app.get('/', routes.root);
-app.get('/orders/:id', routes.orders);
+app.get('/', handler.rootHandler);
+app.get('/orders/:id', handler.ordersHandler);
 
 server.listen(PORT, () => console.log(`server listing on ${PORT}`));

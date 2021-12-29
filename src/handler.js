@@ -3,13 +3,13 @@ dotenv.config();
 
 const getSecret = () => process.env.SECRET;
 
-const root = (req, res) => {
+const rootHandler = (req, res) => {
     console.log(req.query.name);
     res.writeHead(200);
     res.end('No result!');
 };
 
-const orders = (req, res) => {
+const ordersHandler = (req, res) => {
     if (req.query.token !== getSecret()) {
         res.writeHead(200);
         res.end('Your token is expired!');
@@ -22,6 +22,6 @@ const orders = (req, res) => {
 };
 
 export default {
-    root,
-    orders,
+    rootHandler,
+    ordersHandler,
 };
