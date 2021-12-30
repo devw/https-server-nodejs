@@ -1,4 +1,5 @@
 @endpoint=https://localhost:8080
+@access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQW50b25pbyIsImlhdCI6MTY0MDgxMzY3MywiZXhwIjoxNjQwODEzNzMzfQ.IuY9Mrn-3ArS1Pd1FLCnL9aqFvuL1w3iVytb6xHBziM
 
 ### home request
 GET {{endpoint}}
@@ -8,7 +9,7 @@ GET {{endpoint}}/order/1312311213231,1231232
 
 ### orders request via token
 GET {{endpoint}}/orders/1312311213231,1231232
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQW50b25pbyIsImlhdCI6MTY0MDgxMzY3MywiZXhwIjoxNjQwODEzNzMzfQ.IuY9Mrn-3ArS1Pd1FLCnL9aqFvuL1w3iVytb6xHBziM
+Authorization: {{access_token}}
 
 ### login request
 POST {{endpoint}}/login
