@@ -1,8 +1,6 @@
+import { init as initAuth } from './auth/auth';
+
 const node = document.createElement('div');
-
-const getHtmlString = () => `
-    <h1>test</h1>
-`;
-
-node.innerHTML = getHtmlString();
+node.setAttribute('id', 'flp-app');
 document.body.appendChild(node);
+initAuth();

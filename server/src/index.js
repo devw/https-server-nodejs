@@ -1,5 +1,6 @@
 import https from 'https';
 import express from 'express';
+import cors from 'cors';
 import fs from 'fs';
 import handler from './handler.js';
 import { authenticateUser, authenticateToken } from './auth.js';
@@ -16,6 +17,7 @@ const getOptions = () => ({
 const server = https.createServer(getOptions(), app);
 
 app.use(express.json());
+app.use(cors());
 app.get('/', handler.homeHandler);
 app.post('/login', authenticateUser);
 app.get('/order/:id', handler.ordersHandler);
