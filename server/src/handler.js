@@ -5,7 +5,7 @@ const homeHandler = (req, res) => {
 };
 
 const ordersHandler = (_, res) => {
-    res.end('Your data!');
+    res.end(JSON.stringify({ stdout: 'my data!' }));
 };
 
 export default {
