@@ -1,7 +1,8 @@
+import path from 'path';
+
 const homeHandler = (req, res) => {
     console.log(req.query.name);
-    res.writeHead(200);
-    res.end('Home!');
+    res.sendFile(`${path.resolve()}/src/html/home.html`);
 };
 
 const ordersHandler = (_, res) => {

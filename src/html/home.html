@@ -1,0 +1,19 @@
+<form action="/login" method="POST" id="auth">
+    <input type="password" />
+    <input type="submit" />
+</form>
+
+<script>
+    const form = document.querySelector('#auth');
+    const next = async ({ accessToken }) => {
+        const headers = {headers: new Headers({ Authorization: accessToken })};
+        const res = await fetch(`/orders/1312311213231,1231232`, headers);
+
+    };
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        const res = await fetch(`/login`, { method: 'POST' });
+        next(await res.json());
+    };
+    form.addEventListener('submit', submitHandler);
+</script>
