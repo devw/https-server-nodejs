@@ -1,0 +1,17 @@
+{
+    "name": "client",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "build:dev": "webpack --mode=development",
+        "start": "open dist/index.html"
+    },
+    "devDependencies": {
+        "html-loader": "^3.0.1",
+        "html-webpack-plugin": "^5.5.0",
+        "mini-css-extract-plugin": "^2.4.5",
+        "webpack": "^5.65.0",
+        "webpack-cli": "^4.9.1"
+    }
+}

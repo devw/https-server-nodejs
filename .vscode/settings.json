@@ -9,6 +9,11 @@
   "[javascript]": {
     "editor.formatOnSave": true
   },
+  "html.validate.styles": true,
+  "html.validate.scripts": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "workbench.colorCustomizations": {
     "activityBar.background": "#441B55",
     "titleBar.activeBackground": "#5F2677",
